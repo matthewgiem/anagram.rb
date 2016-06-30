@@ -1,17 +1,30 @@
 require('pry')
-
 class String
-  define_method(:anagram)  do
-    numbers=*(1..36)
-    letter_array = self.gsub(/\s+/, /[[:punct:]]/, "").downcase.split("")
-    # letter_array = self.delete(" ").downcase.split("")
-    letter_array.each do |letter|
-      numbers[letter.to_i(36)]+=1
+  define_method(:anagram_search) do |str|
+    anagrams = []
+    arr = str.split(",")
+    input_word = self.anagram
+    arr.each  do |word|
+      array_word = word.anagram
+      if array_word == input_word
+        anagrams.push(word)
+      end
     end
-    letter_array.join
+    anagrams
   end
 end
 
 
-
-# gsub(/[[:punct:]]/, '')
+class String
+  define_method(:anagram)  do
+    numbers=*(1..36)
+    letter_string = self.downcase()
+    letter_string.gsub!(/\s+/, "")
+    letter_string.gsub!(/[[:punct:]]/, "")
+    letter_array = letter_string.split("")
+    letter_array.each do |letter|
+      numbers[letter.to_i(36)]+=1
+    end
+    numbers.join
+  end
+end

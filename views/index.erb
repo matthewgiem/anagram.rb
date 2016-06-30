@@ -1,9 +1,10 @@
-<h1>Welcome to the Change Machine</h1>
-<form action="/anagram">
+<h1>Welcome to the Anagram Game!</h1>
+<form action="/anagram_search">
   <div class="form-group">
-     <label for="cents">How many cents do you want converted to coins?
-</label>
-     <input id="cents" name="cents" class="form-control" type="number">
+     <label for="user_word">Please enter your favorite word:</label>
+     <input id="user_word" name="user_word" class="form-control" type="text">
+     <label for="user_array">Please enter a list of other words that might be anagrams of your favorite word, separated by commas:</label>
+     <input id="user_array" name="user_array" class="form-control" type="text">
   </div>
   <button type="submit" class="btn-success">Go</button>
 </form>
